@@ -1,0 +1,23 @@
+HTTP
+GET POST PUT DELETE
+
+JSON: JavaScript Object Notation
+
+JSON is a syntax for storing and exchanging data
+
+JSON is text, written with JavaScript object notation.
+
+json functions
+
+JSON.parse()  JSON.stringify()
+
+AJAX is fetch
+
+A promise is an  object that may produce
+a single value some time in the future either a
+resolved value, or a reason it's not resolved
+
+Promise has three states
+Rejected
+Fulfilled 
+Pending
