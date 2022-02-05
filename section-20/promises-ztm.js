@@ -6,6 +6,14 @@ const promise = new Promise((resolve, reject) => {
   }
 });
 
+promise
+  .then((resolve) => {
+    console.log(resolve);
+  })
+  .catch((reject) => {
+    console.log(reject);
+  });
+
 const promise2 = new Promise((resolve, reject) => {
   setTimeout(resolve, 100, "HIIII");
 });

@@ -49,7 +49,7 @@ const getData = async function () {
     console.log("posts", posts);
     console.log("albums", albums);
   } catch (error) {
-    console.log("error");
+    console.log("error", error);
   }
 };
 
