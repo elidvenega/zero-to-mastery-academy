@@ -31,9 +31,11 @@ a {
 }
 
 /* dog and puppies pictures */
+/* use em for padding */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin: 3em;
 }
 
 .box > img {
@@ -41,12 +43,13 @@ a {
 }
 
 .box {
-  background: #444;
-  padding: 130px;
+  background: #e55039;
+  padding: 40px;
   margin: 20px;
 }
 
 .footer {
   background: #e55039;
-  padding: 25px;
+  padding: 45px;
+  margin-top: 30px;
 }
