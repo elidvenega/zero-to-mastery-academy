@@ -38,7 +38,7 @@ console.log(list[0].user);
 let database = [
   {
     username: "Jake",
-    password: 0000,
+    password: "secret",
   },
 ];
 
@@ -56,3 +56,16 @@ let newsfeed = [
     timeline: "2:00 PM",
   },
 ];
+
+let userNamePrompt = prompt("Wahts your username");
+let passwordPrompt = prompt("Wahts your password");
+
+function signIn(user, pass) {
+  if (user === database[0].username && pass === database[0].password) {
+    console.log(newsfeed);
+  } else {
+    alert("Wrong user and password");
+  }
+}
+
+signIn(userNamePrompt, passwordPrompt);
