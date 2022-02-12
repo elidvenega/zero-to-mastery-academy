@@ -1,31 +1,31 @@
 "use strict";
 // objects collection of properties
 // function inside object is a method
-let user = {
-  name: "John",
-  age: 34,
-  hobby: "Soccer",
-  isMarried: false,
-  spells: ["abrakadabra", "shazam", "boo"],
-  shout() {
-    console.log("AHHHHHH");
-  },
-};
+// let user = {
+//   name: "John",
+//   age: 34,
+//   hobby: "Soccer",
+//   isMarried: false,
+//   spells: ["abrakadabra", "shazam", "boo"],
+//   shout() {
+//     console.log("AHHHHHH");
+//   },
+// };
 
-user.shout();
+// user.shout();
 
-let list = [
-  {
-    user: "andy",
-    password: "secret",
-  },
-  {
-    user: "jess",
-    password: 123,
-  },
-];
+// let list = [
+//   {
+//     user: "andy",
+//     password: "secret",
+//   },
+//   {
+//     user: "jess",
+//     password: 123,
+//   },
+// ];
 
-console.log(list[0].user);
+// console.log(list[0].user);
 
 // Create an object and an array which we will use in our facebook exercise.
 
@@ -40,32 +40,52 @@ let database = [
     username: "Jake",
     password: "secret",
   },
+  {
+    username: "sally",
+    password: "123",
+  },
+  {
+    username: "ingrid",
+    password: "000",
+  },
 ];
 
 let newsfeed = [
   {
     username: "Paul",
-    timeline: "2:00 PM",
+    timeline: "JS is awesome",
   },
   {
     username: "Andy",
-    timeline: "4:00 PM",
+    timeline: "Technology is cool",
   },
   {
     username: "Eric",
-    timeline: "2:00 PM",
+    timeline: "Programming is awesome",
   },
 ];
 
-let userNamePrompt = prompt("Wahts your username");
-let passwordPrompt = prompt("Wahts your password");
+function isUserValid(username, password) {
+  for (let i = 0; i < database.length; i++) {
+    if (
+      database[i].username === username &&
+      database[i].password === password
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
 
-function signIn(user, pass) {
-  if (user === database[0].username && pass === database[0].password) {
+function signIn(username, password) {
+  if (isUserValid(username, password)) {
     console.log(newsfeed);
   } else {
     alert("Wrong user and password");
   }
 }
+
+let userNamePrompt = prompt("Wahts your username");
+let passwordPrompt = prompt("Wahts your password");
 
 signIn(userNamePrompt, passwordPrompt);
