@@ -1,55 +1,58 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userInput");
-var ul = document.querySelector("ul");
-var deleteBtns = document.getElementsByClassName("delete");
-var items = ul.getElementsByTagName("li");
-//add event listener to first 6 btns in HTML file
-for (var i = 0; i < deleteBtns.length; i++) {
-  deleteBtns[i].addEventListener("click", removeParent, false);
+// selectors
+const button = document.getElementById("enter");
+const input = document.getElementById("userinput");
+const ul = document.querySelector("ul");
+
+// function that creates elements
+function createListElement() {
+  // creating elements
+  const div = document.createElement("div");
+  const li = document.createElement("li");
+  const delButton = document.createElement("button");
+  div.classList.add("wrapper");
+  ul.appendChild(div);
+  div.append(li, delButton);
+  li.classList.add("taskClass");
+  li.appendChild(document.createTextNode(input.value));
+  input.value = "";
+  delButton.classList.add("delClass");
+  delButton.innerHTML = "Del";
 }
-//from StackOverflow:
-function removeParent(evt) {
-  evt.target.removeEventListener("click", removeParent, false);
-  evt.target.parentNode.remove();
-}
-//click on a list item and it strikethroughs the text
-function lineThrough(event) {
-  var a = event.target;
-  if (count == 0) {
-    a.classList.add("done");
-  } else {
-    a.classList.toggle("done");
-  }
-  count++;
-}
-ul.onclick = function (event) {
-  var target = getEventTarget(event);
-  target.classList.toggle("done");
-};
-//adding new items:
+
 function inputLength() {
   return input.value.length;
 }
-function createListElement() {
-  var btn = document.createElement("button");
-  btn.innerHTML = "Delete";
-  btn.onclick = removeParent;
-  var li = document.createElement("li");
-  li.appendChild(document.createTextNode(input.value));
-  li.innerHTML = li.innerHTML + " ";
-  li.appendChild(btn);
-  ul.appendChild(li);
-  input.value = "";
-}
-function addToListAfterClick() {
+
+function addListAfterClick() {
   if (inputLength() > 0) {
     createListElement();
   }
 }
-function addToListAfterKeypress(event) {
+
+function addListAfterKeypress(event) {
   if (inputLength() > 0 && event.keyCode === 13) {
     createListElement();
   }
 }
-button.addEventListener("click", addToListAfterClick);
-input.addEventListener("keypress", addToListAfterKeypress);
+// functions that were created to delete button and things on list
+function doneTask(task) {
+  if (task.target.tagName === "LI") {
+    task.target.classList.toggle("done");
+  }
+}
+
+function deleteListElement(element) {
+  if (element.target.className === "delClass") {
+    element.target.parentElement.remove();
+  }
+}
+
+function handleUlClick(element) {
+  doneTask(element);
+  deleteListElement(element);
+}
+
+// Event handlers
+ul.addEventListener("click", handleUlClick);
+button.addEventListener("click", addListAfterClick);
+input.addEventListener("keypress", addListAfterKeypress);
