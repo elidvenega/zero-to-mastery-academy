@@ -1,3 +1,9 @@
+/* colors from flat UI palatte */
+:root {
+  --main-color: #e67e22;
+  --second-color: #e74c3c;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,13 +12,13 @@
 
 /* navigation bar */
 .nav-bar {
-  background: #e55039;
+  background: var(--main-color);
   display: flex;
 }
 
 li {
   list-style: none;
-  padding: 20px;
+  padding: 25px;
 }
 
 a {
@@ -43,13 +49,13 @@ a {
 }
 
 .box {
-  background: #e55039;
-  padding: 40px;
+  background: var(--second-color);
+  padding: 1em;
   margin: 20px;
 }
 
 .footer {
-  background: #e55039;
-  padding: 45px;
-  margin-top: 30px;
+  background: var(--main-color);
+  padding: 3em;
+  margin-top: 5em;
 }
