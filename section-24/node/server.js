@@ -1,9 +1,14 @@
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((request,response) => {
-    response.setHeader('content-type', 'text/html');
-    response.end(`<h1>Hellooo</h1>
-                  <p>It works</p>`);
+const app = express();
+
+app.use((req, res, next) => {
+    console.log('<h1>HELLOOO</h1>');
+    next();
 })
 
-server.listen(3000);
+app.get('/', (req,res) => {
+    res.send("tests")
+});
+
+app.listen(3000);
