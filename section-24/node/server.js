@@ -1,14 +1,15 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.use((req, res, next) => {
-    console.log('<h1>HELLOOO</h1>');
-    next();
-})
-
-app.get('/', (req,res) => {
-    res.send("tests")
+app.get("/:id", (req, res) => {
+  //console.log(req.query);
+  //req.body;
+  //req.header
+  console.log(req.params);
+  res.status(404).send("not found");
 });
 
 app.listen(3000);
