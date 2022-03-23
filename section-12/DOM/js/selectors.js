@@ -1,6 +1,9 @@
+// 1.ADD Button to delete Items on list
+
+
 // getting id and elements
-const button = document.getElementById("enter");
-const input = document.getElementById("userinput");
+const button = document.querySelector("#enter");
+const input = document.querySelector("#userinput");
 const ul = document.querySelector("ul");
 
 // functions where I create li elements and append them to list
@@ -29,3 +32,6 @@ function addListAfterKeypress(e) {
 // events
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
+
+
+
