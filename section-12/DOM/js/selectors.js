@@ -2,8 +2,8 @@
 
 
 // getting id and elements
-const button = document.querySelector("#enter");
-const input = document.querySelector("#userinput");
+const button = document.getElementById("enter");
+const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 
 // functions where I create li elements and append them to list
@@ -13,10 +13,14 @@ function inputLength() {
 
 function createListElement() {
   const li = document.createElement("li");
+  const btn = document.createElement("button");
   li.appendChild(document.createTextNode(input.value));
+  li.appendChild(btn);
   ul.appendChild(li);
   input.value = "";
 }
+
+
 function addListAfterClick() {
   if (inputLength() > 0) {
     createListElement();
