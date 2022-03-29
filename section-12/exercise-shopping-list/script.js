@@ -16,7 +16,7 @@ function createListElement() {
   li.appendChild(document.createTextNode(input.value));
   input.value = "";
   delButton.classList.add("delClass");
-  delButton.innerHTML = "Del";
+  delButton.innerHTML = "Del"; 
 }
 
 function inputLength() {
