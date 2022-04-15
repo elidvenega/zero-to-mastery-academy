@@ -7,6 +7,7 @@
 // Use a function to solve problem
 // Watch Udemy video again for instructions
 // Get data turn into a string then loop over it
+// Research problem better to solve
 // Return the floor santa is on
 3.Divide
 // Break code into smaller parts
@@ -26,13 +27,17 @@ const fs = require("fs");
 //   console.log(allData);
 // });
 
+fs.readFile("challenge.txt", function (err, data) {
+  if (err) throw err;
 
-fs.readFile('challenge.txt', function(err, data) {
-  if(err) throw err;
+  const arr = data.toString().replace(/\r\n/g, "\n").split("\n");
 
-  const arr = data.toString().replace(/\r\n/g,'\n').split('\n');
-
-  for(let i of arr) {
-      console.log(i);
+  for (let i of arr) {
+    console.log(i);
   }
 });
+
+
+
+
+
