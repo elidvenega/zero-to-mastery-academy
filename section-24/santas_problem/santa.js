@@ -1,3 +1,4 @@
+const fs = require("fs");
 /* 
 1.Understand
 // Santa's snow machine does not work so need to solve 1st puzzle
@@ -20,22 +21,24 @@ final Santa floor = (all the time Santa goes up) -
  (--going up the floor )-- going down
 */
 
-const fs = require("fs");
 
-// fs.readFile("./challenge.txt", "utf-8", (err, data) => {
-//   const allData = JSON.stringify(data);
-//   console.log(allData);
-// });
+function question1() {
+  fs.readFile("./challenge.txt", (err, data) => {
+   const directions = data.toString();
+   const directionsArray = directions.split('');
+   const answer = directionsArray.reduce((acc,cv) => {
+     if(cv === '(') {
+       return acc += 1
+     } else if (cv ===  ')') {
+      return acc -=1 
+     }
+   },0)
+  console.log('floor:', answer);
+  });
+}
 
-fs.readFile("challenge.txt", function (err, data) {
-  if (err) throw err;
+question1();
 
-  const arr = data.toString().replace(/\r\n/g, "\n").split("\n");
-
-  for (let i of arr) {
-    console.log(i);
-  }
-});
 
 
 
