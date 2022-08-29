@@ -1,5 +1,0 @@
-Apples.Purchased: 100
-Oranges.Purchased: 202
-Bananas.Purchased: 140
-
-
