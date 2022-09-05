@@ -2,11 +2,12 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.get("/", (req, res) => {
-  const user = {
-    name: "Sally",
-    hobby: "soccer",
-  };
-  res.send(user);
+ console.log( req.query);
+  res.send("getting root");
 });
+
 app.listen(3000);

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 // 1.Make sure you 100% understand the problem. ask the right questions
 // to get a clear picture of the problem.
 // 2.Divide and conquer: Break a big problem into smaller sub-problems
@@ -10,34 +10,31 @@
 // 2.Make sure btn is inserted into code
 // 3.Google and stack overflow
 
-
-
 // getting id and elements
 const button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 
-// functions where I create li elements and append them to list
+// function where I create li elements and append them to list
 function inputLength() {
   return input.value.length;
 }
 
 function createListElement() {
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   const li = document.createElement("li");
   const btn = document.createElement("button");
-  div.classList.add('wrapper');
-  ul.appendChild(div)
-  div.append(li,btn)
+  div.classList.add("wrapper");
+  ul.appendChild(div);
+  div.append(li, btn);
   li.appendChild(document.createTextNode(input.value));
   li.appendChild(btn);
   ul.appendChild(li);
-  btn.innerHTML = "delete"
-  btn.style.margin = '5px';
+  btn.innerHTML = "delete";
+  btn.style.margin = "5px";
   btn.classList.add("delClass");
   input.value = "";
 }
-
 
 function addListAfterClick() {
   if (inputLength() > 0) {
