@@ -2,16 +2,16 @@ function isUserValid(bool) {
   return bool;
 }
 
-var answer = isUserValid(true) ? "You may enter" : "Access denied";
+const answer = isUserValid(true) ? "You may enter" : "Access denied";
 console.log(answer);
 
-var automatedAnswer =
+const automatedAnswer =
   "Your account # is " + (isUserValid(false) ? "1234" : "not available");
 console.log(automatedAnswer);
 
 // switch statement
 function moveCommand(direction) {
-  var whatHappens;
+  const whatHappens;
   switch (direction) {
     case "forward":
       whatHappens = "you encounter a monster";
